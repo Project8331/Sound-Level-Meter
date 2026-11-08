@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Noise monitor hardware wiring reference</title>
+  <desc id="desc">INMP441 connections for transmitter and receiver ESP32 boards, and DS3231, microSD, and touchscreen pin assignments for the CYD.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#121e30"/>
+    </linearGradient>
+    <style>
+      text { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #edf4fb; }
+      .muted { fill: #a9bbce; }
+      .panel { fill: #18283a; stroke: #36506b; stroke-width: 2; }
+      .head { fill: #58d8c6; font-weight: 700; }
+      .line { stroke: #36506b; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+  <text x="600" y="58" text-anchor="middle" font-size="30" font-weight="700">HARDWARE WIRING REFERENCE</text>
+  <text x="600" y="88" text-anchor="middle" font-size="17" class="muted">Gunakan GND bersama untuk setiap modul pada board masing-masing</text>
+
+  <rect x="45" y="125" width="510" height="500" rx="22" class="panel"/>
+  <text x="300" y="166" text-anchor="middle" font-size="23" font-weight="700">SETIAP TRANSMITTER &amp; RECEIVER</text>
+  <text x="300" y="195" text-anchor="middle" font-size="16" class="muted">ESP32 DevKit ↔ INMP441</text>
+  <text x="95" y="245" class="head" font-size="17">INMP441</text>
+  <text x="365" y="245" class="head" font-size="17">ESP32</text>
+  <g font-size="18">
+    <text x="105" y="289">VDD</text><text x="365" y="289">3V3</text><path d="M220 283H335" stroke="#e9b86b" stroke-width="3"/>
+    <text x="105" y="335">GND</text><text x="365" y="335">GND</text><path d="M220 329H335" stroke="#9eafbf" stroke-width="3"/>
+    <text x="105" y="381">SCK / BCLK</text><text x="365" y="381">GPIO 32</text><path d="M220 375H335" stroke="#58d8c6" stroke-width="3"/>
+    <text x="105" y="427">WS / LRCLK</text><text x="365" y="427">GPIO 25</text><path d="M220 421H335" stroke="#76a9f5" stroke-width="3"/>
+    <text x="105" y="473">SD / DOUT</text><text x="365" y="473">GPIO 33</text><path d="M220 467H335" stroke="#df8ec1" stroke-width="3"/>
+    <text x="105" y="519">L/R</text><text x="365" y="519">GND (slot kiri)</text><path d="M220 513H335" stroke="#9eafbf" stroke-width="3"/>
+  </g>
+  <rect x="82" y="557" width="436" height="43" rx="10" fill="#21364a"/>
+  <text x="300" y="584" text-anchor="middle" font-size="15" class="muted">VDD mikrofon: 3.3 V saja • Jangan sambungkan ke 5 V</text>
+
+  <rect x="585" y="125" width="570" height="500" rx="22" class="panel"/>
+  <text x="870" y="166" text-anchor="middle" font-size="23" font-weight="700">CYD ESP32-2432S028R</text>
+  <text x="625" y="220" class="head" font-size="17">MODUL</text>
+  <text x="830" y="220" class="head" font-size="17">PIN CYD</text>
+  <text x="1020" y="220" class="head" font-size="17">CATATAN</text>
+  <path d="M620 235H1120" class="line"/>
+  <g font-size="17">
+    <text x="625" y="272">DS3231 SDA</text><text x="830" y="272">GPIO 22</text><text x="1020" y="272" class="muted">I2C</text>
+    <text x="625" y="311">DS3231 SCL</text><text x="830" y="311">GPIO 27</text><text x="1020" y="311" class="muted">I2C</text>
+    <path d="M620 329H1120" class="line"/>
+    <text x="625" y="367">microSD CS</text><text x="830" y="367">GPIO 5</text><text x="1020" y="367" class="muted">SPI</text>
+    <text x="625" y="406">microSD SCK</text><text x="830" y="406">GPIO 18</text><text x="1020" y="406" class="muted">SPI</text>
+    <text x="625" y="445">microSD MISO</text><text x="830" y="445">GPIO 19</text><text x="1020" y="445" class="muted">SPI</text>
+    <text x="625" y="484">microSD MOSI</text><text x="830" y="484">GPIO 23</text><text x="1020" y="484" class="muted">SPI</text>
+    <path d="M620 502H1120" class="line"/>
+    <text x="625" y="540">Touch CS / CLK</text><text x="830" y="540">GPIO 33 / 25</text><text x="1020" y="540" class="muted">Touch SPI</text>
+    <text x="625" y="579">Touch MOSI/MISO/IRQ</text><text x="830" y="579">32 / 39 / 36</text><text x="1020" y="579" class="muted">Touch SPI</text>
+  </g>
+  <text x="600" y="665" text-anchor="middle" font-size="15" class="muted">Periksa ulang pin pada varian board dan modul yang digunakan sebelum memberi daya.</text>
+</svg>
